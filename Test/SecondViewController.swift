@@ -8,17 +8,31 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
-   
-    @IBOutlet weak var generateBtn: UIButton!
+    
+    @IBOutlet weak var codeLabel: UILabel!
+    
+    
+    @IBOutlet weak var btn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
+        
     }
     
-
+    
+    
+    @IBAction func generateBtn(_ sender: Any) {
+        
+        let randomNumber = Int.random(in: 0...10000)
+        codeLabel.text = "\(randomNumber)"
+        
+        btn.isHidden = true
+        
+    }
+    
     /*
     // MARK: - Navigation
 

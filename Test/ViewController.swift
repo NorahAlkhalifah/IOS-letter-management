@@ -19,23 +19,25 @@ class ViewController: UIViewController , GIDSignInDelegate {
         
     
         GIDSignIn.sharedInstance().delegate = self
+
         
         view.addSubview(signInButton)
         
         if GIDSignIn.sharedInstance()?.currentUser != nil{
 
             // signed in
-
-
         }
         else{
 
         }
-//
+        
         GIDSignIn.sharedInstance()?.presentingViewController = self
+        
         
         }
     
+    
+   
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
@@ -44,7 +46,6 @@ class ViewController: UIViewController , GIDSignInDelegate {
       
     }
     
-   
     
  
  
