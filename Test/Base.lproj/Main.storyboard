@@ -16,14 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3wI-I2-R3P" customClass="GIDSignInButton">
-                                <rect key="frame" x="87" y="319" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3wI-I2-R3P" customClass="GIDSignInButton">
+                                <rect key="frame" x="15" y="319" width="384" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="vrf-XE-fxH">
+                                <rect key="frame" x="116" y="119" width="151" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3wI-I2-R3P" secondAttribute="trailing" constant="15" id="31J-bD-zUL"/>
+                            <constraint firstItem="3wI-I2-R3P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="mo1-eN-WOR"/>
+                            <constraint firstItem="3wI-I2-R3P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ubX-Tt-QP0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="3wI-I2-R3P" id="n0n-qt-e23"/>
@@ -31,50 +39,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="62"/>
+            <point key="canvasLocation" x="137.68115942028987" y="61.607142857142854"/>
         </scene>
         <!--Second View Controller-->
-        <scene sceneID="4jK-WH-j7c">
+        <scene sceneID="H3w-hb-njp">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="jLS-1f-lHo" customClass="SecondViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fQZ-z4-Ywz">
+                <viewController storyboardIdentifier="SecondViewController" id="e9D-7H-6eN" customClass="SecondViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QA6-b4-IEH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csk-9v-Srj">
-                                <rect key="frame" x="118" y="192" width="179" height="74"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7O-Yq-TdU">
+                                <rect key="frame" x="59" y="281" width="297" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Generate 4 digit code"/>
+                                <state key="normal" title="Authenticate to generate 4 digit code"/>
                                 <connections>
-                                    <action selector="generateBtn:" destination="jLS-1f-lHo" eventType="touchUpInside" id="sCX-XT-hFm"/>
+                                    <action selector="didTapButtonWithSender:" destination="e9D-7H-6eN" eventType="touchUpInside" id="96A-iU-u0i"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsd-AQ-91G" customClass="codeLabel">
-                                <rect key="frame" x="143" y="323" width="154" height="73"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAT-uL-vyM" customClass="codeLabel">
+                                <rect key="frame" x="118" y="424" width="178" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" hint="Generated code" label="codeLabel"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="X3n-kC-1O2"/>
+                        <viewLayoutGuide key="safeArea" id="akW-89-TgB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <accessibility key="accessibilityConfiguration" hint="Generated Code">
-                            <bool key="isElement" value="YES"/>
-                        </accessibility>
                     </view>
                     <connections>
-                        <outlet property="btn" destination="csk-9v-Srj" id="Ewg-Or-qaF"/>
-                        <outlet property="codeLabel" destination="Zsd-AQ-91G" id="9Iz-Qi-jLo"/>
+                        <outlet property="btn" destination="z7O-Yq-TdU" id="frO-IW-hFc"/>
+                        <outlet property="codeLabel" destination="XAT-uL-vyM" id="G8d-04-n6G"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="32z-Yu-0Wj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Is-GD-JOg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931.88405797101461" y="61.607142857142854"/>
+            <point key="canvasLocation" x="949.27536231884062" y="63.616071428571423"/>
         </scene>
     </scenes>
     <resources>
+        <image name="logo" width="150" height="100.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
