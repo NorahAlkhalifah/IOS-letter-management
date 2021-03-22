@@ -30,7 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
         return GIDSignIn.sharedInstance().handle(url)
+        
+        
     }
 
     // MARK: UISceneSession Lifecycle

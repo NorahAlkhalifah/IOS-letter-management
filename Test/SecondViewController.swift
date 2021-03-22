@@ -6,18 +6,22 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseStorage
 
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var codeLabel: UILabel!
     
-    
     @IBOutlet weak var btn: UIButton!
+    
+    let storage = Storage.storage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+    
+
         // Do any additional setup after loading the view.
         
     }

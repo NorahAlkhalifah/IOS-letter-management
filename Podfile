@@ -8,5 +8,10 @@ target 'Test' do
 pod 'Firebase/Auth'
 pod 'Firebase/Core'
 pod 'GoogleSignIn'
+pod 'Firebase/Storage'
+pod 'Firebase/Database'
+pod 'Firebase/Analytics'
+pod 'Firebase/Firestore'
+	
 
 end

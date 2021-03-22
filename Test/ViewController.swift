@@ -9,30 +9,23 @@ import UIKit
 import GoogleSignIn
 
 
+
 class ViewController: UIViewController , GIDSignInDelegate {
     
     
     @IBOutlet var signInButton: GIDSignInButton!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     
         GIDSignIn.sharedInstance().delegate = self
-
-        
-        view.addSubview(signInButton)
-        
-        if GIDSignIn.sharedInstance()?.currentUser != nil{
-
-            // signed in
-        }
-        else{
-
-        }
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
+       //  view.addSubview(signInButton)
         
         }
     
@@ -40,10 +33,16 @@ class ViewController: UIViewController , GIDSignInDelegate {
    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        if let err = error {
+                 print("Error signing in: ", err)
+                 return
+             }
         
-        self.present(vc, animated: true, completion: nil)
-      
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+             
+            self.present(vc, animated: true, completion: nil)
+        
+        
     }
     
     
@@ -65,7 +64,6 @@ class ViewController: UIViewController , GIDSignInDelegate {
 //
 //
 //    }
-
 
 }
 
