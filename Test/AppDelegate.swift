@@ -20,14 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure()
         
         GIDSignIn.sharedInstance()?.clientID = "542753252420-fric0a1q1ocl22taevu9v3d02ld6c29q.apps.googleusercontent.com"
-      //  GIDSignIn.sharedInstance()?.delegate = self
+        GIDSignIn.sharedInstance()?.delegate = self
         
         return true
     }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print("Email : \(String(describing: user.profile.email))")
-    }
+  
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
@@ -35,7 +33,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         
     }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+           if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+             print("The user has not signed in before or they have since signed out.")
+           } else {
+             print("\(error.localizedDescription)")
+            let userId = user.userID
+            print(userId as Any)
+           }
+           return
 
+
+    }
+        
+
+       
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -53,3 +67,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 }
 
+}

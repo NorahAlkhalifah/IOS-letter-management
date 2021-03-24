@@ -9,23 +9,33 @@ import UIKit
 import LocalAuthentication
 import FirebaseDatabase
 import FirebaseStorage
+import Firebase
+import FirebaseFirestore
 
 class SecondViewController: UIViewController {
-    
+        
     @IBOutlet weak var codeLabel: UILabel!
     
     @IBOutlet weak var btn: UIButton!
     
+    let db = Firestore.firestore()
+
+    var ref: DocumentReference? = nil
+    var uid = ""
+    var number = 0
+
     
     override func viewDidLoad() {
+        let user = Auth.auth().currentUser
+        if let user = user {
+          // The user's ID, unique to the Firebase project.
+          // Do NOT use this value to authenticate with your backend server,
+          // if you have one. Use getTokenWithCompletion:completion: instead.
+         uid = user.uid
+        }
+
         super.viewDidLoad()
-       
-//        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-//        view.addSubview(button)
-//        button.center = view.center
-//        button.setTitle("Authenticate to generate the 4 digit code", for: .normal)
-//        button.backgroundColor = .systemTeal
-//        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    
     }
     
     @IBAction func didTapButton (sender: Any){
@@ -51,23 +61,28 @@ class SecondViewController: UIViewController {
                         self?.present(alert, animated: true)
                     return
                 }
-                    // // // // success // // // //
-//                    let vc2 = UIViewController()
-//                    vc2.title = "Welcome"
-//                    vc2.view.backgroundColor = .systemTeal
-//                    self?.present(UINavigationController(rootViewController: vc2),
-//                                  animated: true,
-//                                  completion: nil)
                     
-                    let number = Int.random(in: 0...10000)
+                    self?.number = Int.random(in: 1000...9999)
                   
-                    self?.codeLabel.text = "\(number)"
+                    self?.codeLabel.text = String(self!.number)
                     
                     self!.btn.isHidden = true
-                
                     
-                    //view.addSubview(label)
-                    //self?.view = view
+                }
+                
+                
+                
+                
+                self?.ref = self?.db.collection("Authentications").addDocument(data: ["userID":self?.uid,"code":self?.number])
+                
+                
+                { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    }
+                    else {
+                        print("Document added with ID: \(self?.ref!.documentID)")
+                    }
                 }
             }
         }
@@ -80,6 +95,8 @@ class SecondViewController: UIViewController {
             present(alert, animated: true)
         }
     }
+    
+
 
     
     /*
@@ -91,5 +108,7 @@ class SecondViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+
 
 }
