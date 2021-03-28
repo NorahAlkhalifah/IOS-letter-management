@@ -84,8 +84,8 @@
                                     <constraint firstAttribute="width" constant="300" id="zzP-Ub-8v7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="XAT-uL-vyM" customClass="codeLabel" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="80" y="524" width="254" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="XAT-uL-vyM" customClass="codeLabel" colorLabel="IBBuiltInLabel-Red">
+                                <rect key="frame" x="80" y="524" width="254" height="41"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -93,9 +93,18 @@
                                     <constraint firstAttribute="height" constant="70" id="CtU-pH-YDI"/>
                                     <constraint firstAttribute="height" constant="50" id="izT-h5-AoN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="56783">
+                                        <attributes>
+                                            <color key="NSColor" red="0.2438691556" green="0.2218179703" blue="0.56045645479999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="35" name="Mistral"/>
+                                            <font key="NSOriginalFont" size="35" name="Mistral"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="-2"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="CtU-pH-YDI"/>
