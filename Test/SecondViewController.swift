@@ -23,6 +23,8 @@ class SecondViewController: UIViewController {
     var ref: DocumentReference? = nil
     var uid = ""
     var number = 0
+    var stringNumber : String!
+    var date = FirebaseFirestore.Timestamp()
 
     
     override func viewDidLoad() {
@@ -63,17 +65,23 @@ class SecondViewController: UIViewController {
                 }
                     
                     self?.number = Int.random(in: 1000...9999)
-                  
+                    
+                    print(self?.number)
+                   
                     self?.codeLabel.text = String(self!.number)
                     
                     self!.btn.isHidden = true
+                    
+                    self!.codeLabel.textColor = UIColor.white
+                    
+                    print(self!.stringNumber )
                     
                 }
                 
                 
                 
                 
-                self?.ref = self?.db.collection("Authentications").addDocument(data: ["userID":self?.uid,"code":self?.number])
+                self?.ref = self?.db.collection("Authentications").addDocument(data: ["userID":self?.uid,"code":String(self!.number),"date":self?.date])
                 
                 
                 { err in

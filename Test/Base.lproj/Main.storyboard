@@ -84,29 +84,35 @@
                                     <constraint firstAttribute="width" constant="300" id="zzP-Ub-8v7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="XAT-uL-vyM" customClass="codeLabel" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="80" y="524" width="142" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="XAT-uL-vyM" customClass="codeLabel" colorLabel="IBBuiltInLabel-Red">
+                                <rect key="frame" x="0.0" y="559" width="414" height="75"/>
                                 <color key="backgroundColor" red="0.25255241989999999" green="0.22669464349999999" blue="0.57602745290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.59999999999999998"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="CtU-pH-YDI"/>
                                     <constraint firstAttribute="height" constant="50" id="izT-h5-AoN"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="56783">
+                                    <fragment content="1234">
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="37" name="Futura-Medium"/>
-                                            <font key="NSOriginalFont" size="35" name="Mistral"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            <color key="NSColor" red="0.25255241989999999" green="0.22669464349999999" blue="0.57602745290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="64" name="AdobeMyungjoStd-Medium"/>
+                                            <font key="NSOriginalFont" size="64" name="Optima-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="2" height="-2"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="CtU-pH-YDI"/>
@@ -126,12 +132,12 @@
                             <constraint firstItem="NRw-ES-LLw" firstAttribute="leading" secondItem="akW-89-TgB" secondAttribute="leading" constant="80" id="9GV-8S-XM8"/>
                             <constraint firstItem="XAT-uL-vyM" firstAttribute="top" secondItem="akW-89-TgB" secondAttribute="top" constant="35" id="CHy-GH-riC"/>
                             <constraint firstItem="akW-89-TgB" firstAttribute="trailing" secondItem="XAT-uL-vyM" secondAttribute="trailing" constant="115" id="DQM-Yx-DjG"/>
-                            <constraint firstItem="akW-89-TgB" firstAttribute="trailing" secondItem="XAT-uL-vyM" secondAttribute="trailing" constant="155" id="Gxh-EW-8WG"/>
-                            <constraint firstItem="XAT-uL-vyM" firstAttribute="top" secondItem="NRw-ES-LLw" secondAttribute="bottom" constant="30" id="Mjf-Bg-raz"/>
+                            <constraint firstItem="akW-89-TgB" firstAttribute="trailing" secondItem="XAT-uL-vyM" secondAttribute="trailing" id="Gxh-EW-8WG"/>
+                            <constraint firstItem="XAT-uL-vyM" firstAttribute="top" secondItem="NRw-ES-LLw" secondAttribute="bottom" constant="65" id="Mjf-Bg-raz"/>
                             <constraint firstItem="akW-89-TgB" firstAttribute="trailing" secondItem="XAT-uL-vyM" secondAttribute="trailing" constant="80" id="NVq-RP-Nqn"/>
                             <constraint firstItem="XAT-uL-vyM" firstAttribute="leading" secondItem="akW-89-TgB" secondAttribute="leading" constant="110" id="QXf-ce-EPL"/>
                             <constraint firstItem="z7O-Yq-TdU" firstAttribute="leading" secondItem="akW-89-TgB" secondAttribute="leading" constant="80" id="RAm-XB-Igk"/>
-                            <constraint firstItem="XAT-uL-vyM" firstAttribute="leading" secondItem="akW-89-TgB" secondAttribute="leading" constant="155" id="RXY-xa-L5d"/>
+                            <constraint firstItem="XAT-uL-vyM" firstAttribute="leading" secondItem="akW-89-TgB" secondAttribute="leading" id="RXY-xa-L5d"/>
                             <constraint firstItem="XAT-uL-vyM" firstAttribute="leading" secondItem="akW-89-TgB" secondAttribute="leading" constant="85" id="ZpK-cZ-Phi"/>
                             <constraint firstItem="XAT-uL-vyM" firstAttribute="centerX" secondItem="z7O-Yq-TdU" secondAttribute="centerX" id="bJB-RF-X7A"/>
                             <constraint firstItem="NRw-ES-LLw" firstAttribute="top" secondItem="XAT-uL-vyM" secondAttribute="bottom" constant="35" id="eBk-qM-auB"/>
@@ -152,6 +158,7 @@
                                 <exclude reference="1os-sC-SyA"/>
                                 <exclude reference="5MR-DE-QfR"/>
                                 <exclude reference="DQM-Yx-DjG"/>
+                                <exclude reference="NVq-RP-Nqn"/>
                                 <exclude reference="eBk-qM-auB"/>
                                 <exclude reference="5rP-9Z-hXU"/>
                                 <exclude reference="7Us-HV-FSS"/>
@@ -161,6 +168,8 @@
                                 <exclude reference="bJB-RF-X7A"/>
                                 <exclude reference="ej2-fU-Rgu"/>
                                 <exclude reference="fAs-7f-rHT"/>
+                                <exclude reference="irY-aG-cvj"/>
+                                <exclude reference="rbA-jV-D7j"/>
                                 <exclude reference="ud9-ks-1Y7"/>
                                 <exclude reference="vF5-1K-J5U"/>
                             </mask>
